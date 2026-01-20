@@ -5,6 +5,9 @@ import Header from './Header';
 
 const Layout = () => {
     const [theme, setTheme] = useState('light');
+    const [primaryColor, setPrimaryColor] = useState('#4f46e5'); // Indigo default
+    const [accentColor, setAccentColor] = useState('#8b5cf6'); // Violet default
+
     const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth >= 768);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const [searchQuery, setSearchQuery] = useState('');
@@ -12,7 +15,14 @@ const Layout = () => {
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
-    }, [theme]);
+        document.documentElement.style.setProperty('--primary', primaryColor);
+        document.documentElement.style.setProperty('--accent', accentColor);
+        // Also update RGB for shadows and backgrounds
+        const r = parseInt(primaryColor.slice(1, 3), 16);
+        const g = parseInt(primaryColor.slice(3, 5), 16);
+        const b = parseInt(primaryColor.slice(5, 7), 16);
+        document.documentElement.style.setProperty('--primary-rgb', `${r}, ${g}, ${b}`);
+    }, [theme, primaryColor, accentColor]);
 
     useEffect(() => {
         const handleResize = () => {
@@ -82,6 +92,9 @@ const Layout = () => {
                 <Header
                     toggleTheme={toggleTheme}
                     currentTheme={theme}
+                    setPrimaryColor={setPrimaryColor}
+                    setAccentColor={setAccentColor}
+                    primaryColor={primaryColor}
                     toggleSidebar={toggleSidebar}
                     searchQuery={searchQuery}
                     setSearchQuery={setSearchQuery}

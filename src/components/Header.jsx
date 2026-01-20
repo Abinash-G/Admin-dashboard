@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faMoon, faSun, faBell, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faMoon, faSun, faBell, faSearch, faPalette, faCheck } from '@fortawesome/free-solid-svg-icons';
 
-const Header = ({ toggleTheme, currentTheme, toggleSidebar, searchQuery, setSearchQuery }) => {
+const Header = ({ toggleTheme, currentTheme, setPrimaryColor, setAccentColor, primaryColor, toggleSidebar, searchQuery, setSearchQuery }) => {
     const [activeDropdown, setActiveDropdown] = useState(null);
     const navigate = useNavigate();
     const location = useLocation();
@@ -43,12 +43,26 @@ const Header = ({ toggleTheme, currentTheme, toggleSidebar, searchQuery, setSear
 
     const title = getTitle(location.pathname);
 
+    const colorPresets = [
+        { name: 'Indigo', primary: '#4f46e5', accent: '#8b5cf6' },
+        { name: 'Emerald', primary: '#10b981', accent: '#059669' },
+        { name: 'Rose', primary: '#f43f5e', accent: '#e11d48' },
+        { name: 'Amber', primary: '#f59e0b', accent: '#d97706' },
+        { name: 'Sky', primary: '#0ea5e9', accent: '#0284c7' }
+    ];
+
     const toggleDropdown = (name) => {
         if (activeDropdown === name) {
             setActiveDropdown(null);
         } else {
             setActiveDropdown(name);
         }
+    };
+
+    const handleColorChange = (preset) => {
+        setPrimaryColor(preset.primary);
+        setAccentColor(preset.accent);
+        setActiveDropdown(null);
     };
 
     const handleLogout = () => {
@@ -95,9 +109,51 @@ const Header = ({ toggleTheme, currentTheme, toggleSidebar, searchQuery, setSear
                     onClick={toggleTheme}
                     className="btn btn-light rounded-circle shadow-sm d-flex align-items-center justify-content-center"
                     style={{ width: '40px', height: '40px', background: 'var(--bg-panel)', color: currentTheme === 'light' ? '#f59e0b' : '#fbbf24' }}
+                    title="Toggle Dark/Light Mode"
                 >
                     <FontAwesomeIcon icon={currentTheme === 'light' ? faMoon : faSun} />
                 </button>
+
+                {/* Color Customizer */}
+                <div className="position-relative">
+                    <button
+                        onClick={() => toggleDropdown('colors')}
+                        className="btn btn-light rounded-circle shadow-sm d-flex align-items-center justify-content-center"
+                        style={{ width: '40px', height: '40px', background: 'var(--bg-panel)', color: 'var(--primary)' }}
+                        title="Change Theme Color"
+                    >
+                        <FontAwesomeIcon icon={faPalette} />
+                    </button>
+                    {activeDropdown === 'colors' && (
+                        <div className="dropdown-menu-custom d-block" style={{ minWidth: '180px' }}>
+                            <h6 className="fw-bold mb-3 border-bottom pb-2" style={{ borderColor: 'var(--border-color)' }}>Theme Color</h6>
+                            <div className="d-flex flex-column gap-2">
+                                {colorPresets.map((preset) => (
+                                    <button
+                                        key={preset.name}
+                                        onClick={() => handleColorChange(preset)}
+                                        className="btn btn-sm d-flex align-items-center justify-content-between p-2 rounded-3 transition-all border-0 w-100"
+                                        style={{
+                                            background: primaryColor === preset.primary ? 'rgba(var(--primary-rgb), 0.1)' : 'transparent',
+                                            color: 'var(--text-main)'
+                                        }}
+                                    >
+                                        <div className="d-flex align-items-center">
+                                            <div
+                                                className="rounded-circle me-2"
+                                                style={{ width: '16px', height: '16px', background: preset.primary }}
+                                            />
+                                            <span className="small fw-medium">{preset.name}</span>
+                                        </div>
+                                        {primaryColor === preset.primary && (
+                                            <FontAwesomeIcon icon={faCheck} className="text-primary small" />
+                                        )}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </div>
 
                 {/* Notifications */}
                 <div className="position-relative">
