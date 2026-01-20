@@ -44,11 +44,13 @@ const Header = ({ toggleTheme, currentTheme, setPrimaryColor, setAccentColor, pr
     const title = getTitle(location.pathname);
 
     const colorPresets = [
-        { name: 'Indigo', primary: '#4f46e5', accent: '#8b5cf6' },
-        { name: 'Emerald', primary: '#10b981', accent: '#059669' },
-        { name: 'Rose', primary: '#f43f5e', accent: '#e11d48' },
-        { name: 'Amber', primary: '#f59e0b', accent: '#d97706' },
-        { name: 'Sky', primary: '#0ea5e9', accent: '#0284c7' }
+        { name: 'Purple', primary: '#7c3aed', accent: '#c026d3' },
+        { name: 'Red', primary: '#ef4444', accent: '#b91c1c' },
+        { name: 'Blue', primary: '#3b82f6', accent: '#1d4ed8' },
+        { name: 'Green', primary: '#10b981', accent: '#047857' },
+        { name: 'Yellow', primary: '#f59e0b', accent: '#d97706' },
+        { name: 'Pink', primary: '#ec4899', accent: '#be185d' },
+        { name: 'Orange', primary: '#f97316', accent: '#c2410c' }
     ];
 
     const toggleDropdown = (name) => {
@@ -59,10 +61,31 @@ const Header = ({ toggleTheme, currentTheme, setPrimaryColor, setAccentColor, pr
         }
     };
 
+    const adjustColor = (hex, amount) => {
+        let col = hex.replace('#', '');
+        let r = parseInt(col.substring(0, 2), 16);
+        let g = parseInt(col.substring(2, 4), 16);
+        let b = parseInt(col.substring(4, 6), 16);
+
+        const shift = (v) => Math.max(0, Math.min(255, v + amount));
+
+        const rs = shift(r).toString(16).padStart(2, '0');
+        const gs = shift(g).toString(16).padStart(2, '0');
+        const bs = shift(b).toString(16).padStart(2, '0');
+
+        return `#${rs}${gs}${bs}`;
+    };
+
     const handleColorChange = (preset) => {
         setPrimaryColor(preset.primary);
         setAccentColor(preset.accent);
         setActiveDropdown(null);
+    };
+
+    const handleCustomColorChange = (val) => {
+        setPrimaryColor(val);
+        // Create a vibrant accent by shifting the hue/brightness
+        setAccentColor(adjustColor(val, 40));
     };
 
     const handleLogout = () => {
@@ -125,31 +148,56 @@ const Header = ({ toggleTheme, currentTheme, setPrimaryColor, setAccentColor, pr
                         <FontAwesomeIcon icon={faPalette} />
                     </button>
                     {activeDropdown === 'colors' && (
-                        <div className="dropdown-menu-custom d-block" style={{ minWidth: '180px' }}>
-                            <h6 className="fw-bold mb-3 border-bottom pb-2" style={{ borderColor: 'var(--border-color)' }}>Theme Color</h6>
-                            <div className="d-flex flex-column gap-2">
+                        <div className="dropdown-menu-custom d-block" style={{ minWidth: '220px', padding: '1.25rem' }}>
+                            <h6 className="fw-bold mb-3 border-bottom pb-2" style={{ borderColor: 'var(--border-color)', fontSize: '0.9rem' }}>Theme Color</h6>
+                            <div className="d-flex flex-wrap gap-2 justify-content-center">
                                 {colorPresets.map((preset) => (
                                     <button
                                         key={preset.name}
                                         onClick={() => handleColorChange(preset)}
-                                        className="btn btn-sm d-flex align-items-center justify-content-between p-2 rounded-3 transition-all border-0 w-100"
+                                        className="rounded-circle border-0 d-flex align-items-center justify-content-center transition-all shadow-sm"
                                         style={{
-                                            background: primaryColor === preset.primary ? 'rgba(var(--primary-rgb), 0.1)' : 'transparent',
-                                            color: 'var(--text-main)'
+                                            width: '32px',
+                                            height: '32px',
+                                            padding: 0,
+                                            background: preset.primary,
+                                            transform: primaryColor === preset.primary ? 'scale(1.2)' : 'scale(1)',
+                                            boxShadow: primaryColor === preset.primary ? `0 0 10px ${preset.primary}` : 'none',
+                                            border: primaryColor === preset.primary ? '2px solid white' : 'none'
                                         }}
+                                        title={preset.name}
                                     >
-                                        <div className="d-flex align-items-center">
-                                            <div
-                                                className="rounded-circle me-2"
-                                                style={{ width: '16px', height: '16px', background: preset.primary }}
-                                            />
-                                            <span className="small fw-medium">{preset.name}</span>
-                                        </div>
                                         {primaryColor === preset.primary && (
-                                            <FontAwesomeIcon icon={faCheck} className="text-primary small" />
+                                            <FontAwesomeIcon icon={faCheck} style={{ color: 'white', fontSize: '10px' }} />
                                         )}
                                     </button>
                                 ))}
+
+                                {/* Custom Color Picker */}
+                                <div className="position-relative">
+                                    <label
+                                        className="rounded-circle border-0 d-flex align-items-center justify-content-center transition-all shadow-sm cursor-pointer"
+                                        style={{
+                                            width: '32px',
+                                            height: '32px',
+                                            background: 'conic-gradient(red, yellow, lime, aqua, blue, magenta, red)',
+                                            border: !colorPresets.some(p => p.primary === primaryColor) ? '2px solid white' : 'none',
+                                            transform: !colorPresets.some(p => p.primary === primaryColor) ? 'scale(1.2)' : 'scale(1)',
+                                            boxShadow: !colorPresets.some(p => p.primary === primaryColor) ? `0 0 10px ${primaryColor}` : 'none',
+                                        }}
+                                        title="Pick Custom Color"
+                                    >
+                                        <input
+                                            type="color"
+                                            className="position-absolute opacity-0 w-100 h-100 cursor-pointer"
+                                            value={primaryColor}
+                                            onChange={(e) => handleCustomColorChange(e.target.value)}
+                                        />
+                                        {!colorPresets.some(p => p.primary === primaryColor) && (
+                                            <FontAwesomeIcon icon={faCheck} style={{ color: 'white', fontSize: '10px', filter: 'drop-shadow(0 0 2px rgba(0,0,0,0.5))' }} />
+                                        )}
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     )}

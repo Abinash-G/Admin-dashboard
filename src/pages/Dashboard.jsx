@@ -17,7 +17,7 @@ import {
 } from 'recharts';
 import transactions from '../data/transactions.json';
 
-const StatCard = ({ icon, label, value, trend, color }) => (
+const StatCard = ({ icon, label, value, trend, hueShift = "0deg" }) => (
     <div className="col-12 col-md-6 col-xl-3 mb-4">
         <div className="glass-panel p-4 h-100 card-hoverable position-relative overflow-hidden">
             <div className="d-flex justify-content-between align-items-start">
@@ -27,7 +27,14 @@ const StatCard = ({ icon, label, value, trend, color }) => (
                 </div>
                 <div
                     className="rounded-circle d-flex align-items-center justify-content-center text-white shadow-md"
-                    style={{ width: '48px', height: '48px', minWidth: '48px', flexShrink: 0, background: `linear-gradient(135deg, ${color}, #8b5cf6)` }}
+                    style={{
+                        width: '48px',
+                        height: '48px',
+                        minWidth: '48px',
+                        flexShrink: 0,
+                        background: `linear-gradient(135deg, var(--primary), var(--accent))`,
+                        filter: `hue-rotate(${hueShift})`
+                    }}
                 >
                     <FontAwesomeIcon icon={icon} />
                 </div>
@@ -214,7 +221,7 @@ const Dashboard = () => {
         { name: 'Elderly', value: 300 },
     ];
 
-    const COLORS = ['#0ea5e9', '#6366f1', '#a78bfa'];
+    const COLORS = ['var(--primary)', 'var(--secondary)', 'var(--accent)'];
 
     return (
         <div className="animate-fade-in">
@@ -244,10 +251,10 @@ const Dashboard = () => {
             </style>
             {/* Stats Row */}
             <div className="row">
-                <StatCard icon={faProcedures} label="Total Patients" value="1,240" trend="12.5%" color="#0ea5e9" />
-                <StatCard icon={faUserMd} label="Doctors" value="24" trend="--%" color="#8b5cf6" />
-                <StatCard icon={faUsers} label="Appointments" value="86" trend="5.2%" color="#ec4899" />
-                <StatCard icon={faDollarSign} label="Earnings" value={formatCurrency(revenue)} trend="8.4%" color="#10b981" />
+                <StatCard icon={faProcedures} label="Total Patients" value="1,240" trend="12.5%" hueShift="-15deg" />
+                <StatCard icon={faUserMd} label="Doctors" value="24" trend="--%" hueShift="0deg" />
+                <StatCard icon={faUsers} label="Appointments" value="86" trend="5.2%" hueShift="30deg" />
+                <StatCard icon={faDollarSign} label="Earnings" value={formatCurrency(revenue)} trend="8.4%" hueShift="60deg" />
             </div>
 
             {/* Analytics Charts Row */}
@@ -295,12 +302,12 @@ const Dashboard = () => {
                                 <AreaChart data={revenueData} margin={{ top: 10, right: 0, left: -20, bottom: 0 }}>
                                     <defs>
                                         <linearGradient id="colorIncome" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="5%" stopColor="#6366f1" stopOpacity={0.3} />
-                                            <stop offset="95%" stopColor="#6366f1" stopOpacity={0} />
+                                            <stop offset="5%" stopColor="var(--primary)" stopOpacity={0.3} />
+                                            <stop offset="95%" stopColor="var(--primary)" stopOpacity={0} />
                                         </linearGradient>
                                         <linearGradient id="colorExpense" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="5%" stopColor="#0ea5e9" stopOpacity={0.3} />
-                                            <stop offset="95%" stopColor="#0ea5e9" stopOpacity={0} />
+                                            <stop offset="5%" stopColor="var(--secondary)" stopOpacity={0.3} />
+                                            <stop offset="95%" stopColor="var(--secondary)" stopOpacity={0} />
                                         </linearGradient>
                                     </defs>
                                     <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: 'var(--text-muted)', fontSize: 12 }} dy={10} />
@@ -309,8 +316,8 @@ const Dashboard = () => {
                                         contentStyle={{ backgroundColor: 'var(--bg-panel)', border: 'none', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
                                         itemStyle={{ color: 'var(--text-main)' }}
                                     />
-                                    <Area type="monotone" dataKey="income" stroke="#6366f1" strokeWidth={3} fillOpacity={1} fill="url(#colorIncome)" />
-                                    <Area type="monotone" dataKey="expense" stroke="#0ea5e9" strokeWidth={3} fillOpacity={1} fill="url(#colorExpense)" />
+                                    <Area type="monotone" dataKey="income" stroke="var(--primary)" strokeWidth={3} fillOpacity={1} fill="url(#colorIncome)" />
+                                    <Area type="monotone" dataKey="expense" stroke="var(--secondary)" strokeWidth={3} fillOpacity={1} fill="url(#colorExpense)" />
                                 </AreaChart>
                             </ResponsiveContainer>
                         </div>
