@@ -1,0 +1,426 @@
+[
+    {
+        "id": "#TRX-9001",
+        "patient": "John Doe",
+        "amount": "₹1,200",
+        "date": "Dec 01, 2025",
+        "status": "Completed",
+        "method": "Cash"
+    },
+    {
+        "id": "#TRX-9002",
+        "patient": "Jane Smith",
+        "amount": "₹5,000",
+        "date": "Dec 02, 2025",
+        "status": "Completed",
+        "method": "Credit Card"
+    },
+    {
+        "id": "#TRX-9003",
+        "patient": "Michael Brown",
+        "amount": "₹8,500",
+        "date": "Dec 03, 2025",
+        "status": "Completed",
+        "method": "Debit Card"
+    },
+    {
+        "id": "#TRX-9004",
+        "patient": "Emma Wilson",
+        "amount": "₹12,000",
+        "date": "Dec 04, 2025",
+        "status": "Pending",
+        "method": "Insurance"
+    },
+    {
+        "id": "#TRX-9005",
+        "patient": "David Miller",
+        "amount": "₹15,000",
+        "date": "Dec 05, 2025",
+        "status": "Completed",
+        "method": "Bank Transfer"
+    },
+    {
+        "id": "#TRX-9006",
+        "patient": "Sarah Davis",
+        "amount": "₹2,200",
+        "date": "Dec 06, 2025",
+        "status": "Completed",
+        "method": "Cash"
+    },
+    {
+        "id": "#TRX-9007",
+        "patient": "James Taylor",
+        "amount": "₹4,800",
+        "date": "Dec 07, 2025",
+        "status": "Completed",
+        "method": "Credit Card"
+    },
+    {
+        "id": "#TRX-9008",
+        "patient": "Linda Thomas",
+        "amount": "₹3,500",
+        "date": "Dec 08, 2025",
+        "status": "Failed",
+        "method": "Debit Card"
+    },
+    {
+        "id": "#TRX-9009",
+        "patient": "Robert Moore",
+        "amount": "₹9,200",
+        "date": "Dec 09, 2025",
+        "status": "Completed",
+        "method": "Insurance"
+    },
+    {
+        "id": "#TRX-9010",
+        "patient": "Barbara White",
+        "amount": "₹1,500",
+        "date": "Dec 10, 2025",
+        "status": "Completed",
+        "method": "Cash"
+    },
+    {
+        "id": "#TRX-9011",
+        "patient": "William Martin",
+        "amount": "₹7,000",
+        "date": "Dec 11, 2025",
+        "status": "Completed",
+        "method": "Credit Card"
+    },
+    {
+        "id": "#TRX-9012",
+        "patient": "Elizabeth Lee",
+        "amount": "₹11,000",
+        "date": "Dec 12, 2025",
+        "status": "Pending",
+        "method": "Bank Transfer"
+    },
+    {
+        "id": "#TRX-9013",
+        "patient": "Richard Perez",
+        "amount": "₹18,500",
+        "date": "Dec 13, 2025",
+        "status": "Completed",
+        "method": "Credit Card"
+    },
+    {
+        "id": "#TRX-9014",
+        "patient": "Susan Clark",
+        "amount": "₹2,000",
+        "date": "Dec 14, 2025",
+        "status": "Completed",
+        "method": "Cash"
+    },
+    {
+        "id": "#TRX-9015",
+        "patient": "Joseph Lewis",
+        "amount": "₹6,400",
+        "date": "Dec 15, 2025",
+        "status": "Completed",
+        "method": "Debit Card"
+    },
+    {
+        "id": "#TRX-9100",
+        "patient": "Alice Freeman",
+        "amount": "₹4,500",
+        "date": "Dec 16, 2025",
+        "status": "Completed",
+        "method": "Credit Card"
+    },
+    {
+        "id": "#TRX-9101",
+        "patient": "Robert Wolf",
+        "amount": "₹12,500",
+        "date": "Dec 17, 2025",
+        "status": "Completed",
+        "method": "Insurance"
+    },
+    {
+        "id": "#TRX-9102",
+        "patient": "Michael Smith",
+        "amount": "₹850",
+        "date": "Dec 18, 2025",
+        "status": "Completed",
+        "method": "Cash"
+    },
+    {
+        "id": "#TRX-9103",
+        "patient": "Emma Watson",
+        "amount": "₹2,500",
+        "date": "Dec 19, 2025",
+        "status": "Failed",
+        "method": "Credit Card"
+    },
+    {
+        "id": "#TRX-9104",
+        "patient": "James Oliver",
+        "amount": "₹15,000",
+        "date": "Dec 20, 2025",
+        "status": "Completed",
+        "method": "Bank Transfer"
+    },
+    {
+        "id": "#TRX-9105",
+        "patient": "Sophia Brown",
+        "amount": "₹1,200",
+        "date": "Dec 21, 2025",
+        "status": "Pending",
+        "method": "Cash"
+    },
+    {
+        "id": "#TRX-9106",
+        "patient": "Lucas Gray",
+        "amount": "₹5,600",
+        "date": "Dec 21, 2025",
+        "status": "Completed",
+        "method": "Credit Card"
+    },
+    {
+        "id": "#TRX-9107",
+        "patient": "Olivia White",
+        "amount": "₹3,200",
+        "date": "Dec 22, 2025",
+        "status": "Completed",
+        "method": "Debit Card"
+    },
+    {
+        "id": "#TRX-9108",
+        "patient": "Ethan Hunt",
+        "amount": "₹9,000",
+        "date": "Dec 22, 2025",
+        "status": "Pending",
+        "method": "Insurance"
+    },
+    {
+        "id": "#TRX-9109",
+        "patient": "Mia Johnson",
+        "amount": "₹1,500",
+        "date": "Dec 23, 2025",
+        "status": "Completed",
+        "method": "Cash"
+    },
+    {
+        "id": "#TRX-9110",
+        "patient": "Alice Freeman",
+        "amount": "₹2,400",
+        "date": "Dec 24, 2025",
+        "status": "Completed",
+        "method": "Credit Card"
+    },
+    {
+        "id": "#TRX-9111",
+        "patient": "Robert Wolf",
+        "amount": "₹6,500",
+        "date": "Dec 25, 2025",
+        "status": "Completed",
+        "method": "Bank Transfer"
+    },
+    {
+        "id": "#TRX-9112",
+        "patient": "Michael Smith",
+        "amount": "₹950",
+        "date": "Dec 26, 2025",
+        "status": "Completed",
+        "method": "Cash"
+    },
+    {
+        "id": "#TRX-9113",
+        "patient": "Emma Watson",
+        "amount": "₹1,200",
+        "date": "Dec 27, 2025",
+        "status": "Pending",
+        "method": "Credit Card"
+    },
+    {
+        "id": "#TRX-9114",
+        "patient": "James Oliver",
+        "amount": "₹22,000",
+        "date": "Dec 28, 2025",
+        "status": "Completed",
+        "method": "Insurance"
+    },
+    {
+        "id": "#TRX-9115",
+        "patient": "Sophia Brown",
+        "amount": "₹500",
+        "date": "Dec 29, 2025",
+        "status": "Completed",
+        "method": "Cash"
+    },
+    {
+        "id": "#TRX-9116",
+        "patient": "Lucas Gray",
+        "amount": "₹3,100",
+        "date": "Dec 30, 2025",
+        "status": "Completed",
+        "method": "Debit Card"
+    },
+    {
+        "id": "#TRX-9117",
+        "patient": "Olivia White",
+        "amount": "₹1,800",
+        "date": "Dec 31, 2025",
+        "status": "Completed",
+        "method": "Cash"
+    },
+    {
+        "id": "#TRX-9201",
+        "patient": "Alice Freeman",
+        "amount": "₹12,400",
+        "date": "Jan 01, 2026",
+        "status": "Completed",
+        "method": "Insurance"
+    },
+    {
+        "id": "#TRX-9202",
+        "patient": "Robert Wolf",
+        "amount": "₹2,500",
+        "date": "Jan 02, 2026",
+        "status": "Completed",
+        "method": "Credit Card"
+    },
+    {
+        "id": "#TRX-9203",
+        "patient": "Michael Smith",
+        "amount": "₹8,000",
+        "date": "Jan 03, 2026",
+        "status": "Completed",
+        "method": "Bank Transfer"
+    },
+    {
+        "id": "#TRX-9204",
+        "patient": "Emma Watson",
+        "amount": "₹1,500",
+        "date": "Jan 04, 2026",
+        "status": "Completed",
+        "method": "Cash"
+    },
+    {
+        "id": "#TRX-9205",
+        "patient": "James Oliver",
+        "amount": "₹5,000",
+        "date": "Jan 05, 2026",
+        "status": "Pending",
+        "method": "Debit Card"
+    },
+    {
+        "id": "#TRX-9206",
+        "patient": "Sophia Brown",
+        "amount": "₹3,200",
+        "date": "Jan 06, 2026",
+        "status": "Completed",
+        "method": "Credit Card"
+    },
+    {
+        "id": "#TRX-9207",
+        "patient": "Lucas Gray",
+        "amount": "₹900",
+        "date": "Jan 07, 2026",
+        "status": "Completed",
+        "method": "Cash"
+    },
+    {
+        "id": "#TRX-9208",
+        "patient": "Olivia White",
+        "amount": "₹15,600",
+        "date": "Jan 08, 2026",
+        "status": "Completed",
+        "method": "Insurance"
+    },
+    {
+        "id": "#TRX-9209",
+        "patient": "Alice Freeman",
+        "amount": "₹4,200",
+        "date": "Jan 09, 2026",
+        "status": "Completed",
+        "method": "Credit Card"
+    },
+    {
+        "id": "#TRX-9210",
+        "patient": "Robert Wolf",
+        "amount": "₹7,800",
+        "date": "Jan 10, 2026",
+        "status": "Completed",
+        "method": "Bank Transfer"
+    },
+    {
+        "id": "#TRX-9211",
+        "patient": "Michael Smith",
+        "amount": "₹1,100",
+        "date": "Jan 11, 2026",
+        "status": "Completed",
+        "method": "Cash"
+    },
+    {
+        "id": "#TRX-9212",
+        "patient": "Emma Watson",
+        "amount": "₹2,900",
+        "date": "Jan 12, 2026",
+        "status": "Pending",
+        "method": "Credit Card"
+    },
+    {
+        "id": "#TRX-9213",
+        "patient": "James Oliver",
+        "amount": "₹11,500",
+        "date": "Jan 13, 2026",
+        "status": "Completed",
+        "method": "Insurance"
+    },
+    {
+        "id": "#TRX-9214",
+        "patient": "Sophia Brown",
+        "amount": "₹850",
+        "date": "Jan 14, 2026",
+        "status": "Completed",
+        "method": "Cash"
+    },
+    {
+        "id": "#TRX-9215",
+        "patient": "Lucas Gray",
+        "amount": "₹4,600",
+        "date": "Jan 15, 2026",
+        "status": "Completed",
+        "method": "Debit Card"
+    },
+    {
+        "id": "#TRX-9216",
+        "patient": "Olivia White",
+        "amount": "₹6,200",
+        "date": "Jan 16, 2026",
+        "status": "Completed",
+        "method": "Bank Transfer"
+    },
+    {
+        "id": "#TRX-9217",
+        "patient": "Alice Freeman",
+        "amount": "₹1,400",
+        "date": "Jan 17, 2026",
+        "status": "Completed",
+        "method": "Cash"
+    },
+    {
+        "id": "#TRX-9218",
+        "patient": "Robert Wolf",
+        "amount": "₹9,500",
+        "date": "Jan 18, 2026",
+        "status": "Completed",
+        "method": "Credit Card"
+    },
+    {
+        "id": "#TRX-9219",
+        "patient": "Michael Smith",
+        "amount": "₹3,300",
+        "date": "Jan 19, 2026",
+        "status": "Pending",
+        "method": "Insurance"
+    },
+    {
+        "id": "#TRX-9220",
+        "patient": "Emma Watson",
+        "amount": "₹5,200",
+        "date": "Jan 20, 2026",
+        "status": "Completed",
+        "method": "Bank Transfer"
+    }
+]

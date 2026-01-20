@@ -1,0 +1,215 @@
+{
+    "patients": [
+        {
+            "id": "#P-001",
+            "name": "Alice Freeman",
+            "age": 28,
+            "gender": "Female",
+            "issue": "Migraine",
+            "date": "Oct 24, 2023",
+            "status": "Outpatient",
+            "doctor": "Dr. Anitha",
+            "img": "https://i.pravatar.cc/150?img=5"
+        },
+        {
+            "id": "#P-002",
+            "name": "Robert Wolf",
+            "age": 45,
+            "gender": "Male",
+            "issue": "Fracture",
+            "date": "Oct 23, 2023",
+            "status": "Admitted",
+            "doctor": "Dr. Senthil",
+            "img": "https://i.pravatar.cc/150?img=3"
+        },
+        {
+            "id": "#P-003",
+            "name": "Michael Smith",
+            "age": 32,
+            "gender": "Male",
+            "issue": "Fever",
+            "date": "Oct 22, 2023",
+            "status": "Outpatient",
+            "doctor": "Dr. Anitha",
+            "img": "https://i.pravatar.cc/150?img=7"
+        },
+        {
+            "id": "#P-004",
+            "name": "Emma Watson",
+            "age": 24,
+            "gender": "Female",
+            "issue": "Checkup",
+            "date": "Oct 22, 2023",
+            "status": "Admitted",
+            "doctor": "Dr. Ramesh",
+            "img": "https://i.pravatar.cc/150?img=9"
+        },
+        {
+            "id": "#P-005",
+            "name": "James Oliver",
+            "age": 50,
+            "gender": "Male",
+            "issue": "Cardio",
+            "date": "Oct 21, 2023",
+            "status": "Inpatient",
+            "doctor": "Dr. Senthil",
+            "img": "https://i.pravatar.cc/150?img=11"
+        },
+        {
+            "id": "#P-006",
+            "name": "Sophia Brown",
+            "age": 29,
+            "gender": "Female",
+            "issue": "Dental",
+            "date": "Oct 20, 2023",
+            "status": "Outpatient",
+            "doctor": "Dr. Priya",
+            "img": "https://i.pravatar.cc/150?img=1"
+        }
+    ],
+    "appointments": [
+        {
+            "patient": "Alice Freeman",
+            "doctor": "Dr. Anitha Raj",
+            "type": "General Checkup",
+            "time": "09:00 AM",
+            "date": "Oct 25",
+            "status": "Confirmed",
+            "img": "https://i.pravatar.cc/150?img=5",
+            "day": "25",
+            "month": "OCT"
+        },
+        {
+            "patient": "Robert Wolf",
+            "doctor": "Dr. Senthil Kumar",
+            "type": "Cardio Consult",
+            "time": "11:30 AM",
+            "date": "Oct 25",
+            "status": "Pending",
+            "img": "https://i.pravatar.cc/150?img=3",
+            "day": "25",
+            "month": "OCT"
+        },
+        {
+            "patient": "Michael Smith",
+            "doctor": "Dr. Priya Darshini",
+            "type": "Pediatric",
+            "time": "02:00 PM",
+            "date": "Oct 25",
+            "status": "Cancelled",
+            "img": "https://i.pravatar.cc/150?img=7",
+            "day": "25",
+            "month": "OCT"
+        }
+    ],
+    "transactions": [
+        {
+            "id": "#TRX-9874",
+            "patient": "Alice Freeman",
+            "amount": "₹4500.00",
+            "date": "Oct 24, 2023",
+            "status": "Completed",
+            "method": "Credit Card"
+        },
+        {
+            "id": "#TRX-9875",
+            "patient": "Robert Wolf",
+            "amount": "₹12500.00",
+            "date": "Oct 24, 2023",
+            "status": "Pending",
+            "method": "Insurance"
+        },
+        {
+            "id": "#TRX-9876",
+            "patient": "Michael Smith",
+            "amount": "₹850.00",
+            "date": "Oct 23, 2023",
+            "status": "Completed",
+            "method": "Cash"
+        },
+        {
+            "id": "#TRX-9877",
+            "patient": "Emma Watson",
+            "amount": "₹2500.00",
+            "date": "Oct 23, 2023",
+            "status": "Failed",
+            "method": "Credit Card"
+        }
+    ],
+    "doctors": [
+        {
+            "id": "dr-sarah",
+            "name": "Dr. Anitha Raj",
+            "specialty": "Neurologist",
+            "patients": "1.4k+",
+            "rating": 4.8,
+            "img": "https://i.pravatar.cc/150?img=5"
+        },
+        {
+            "id": "dr-john",
+            "name": "Dr. Senthil Kumar",
+            "specialty": "Cardiologist",
+            "patients": "2k+",
+            "rating": 4.9,
+            "img": "https://i.pravatar.cc/150?img=11"
+        },
+        {
+            "id": "dr-emily",
+            "name": "Dr. Priya Darshini",
+            "specialty": "Dentist",
+            "patients": "900+",
+            "rating": 4.7,
+            "img": "https://i.pravatar.cc/150?img=1"
+        },
+        {
+            "id": "dr-mike",
+            "name": "Dr. Ramesh Babu",
+            "specialty": "General Surgeon",
+            "patients": "1.2k+",
+            "rating": 4.6,
+            "img": "https://i.pravatar.cc/150?img=3"
+        },
+        {
+            "id": "dr-jessica",
+            "name": "Dr. Lakshmi Priya",
+            "specialty": "Pediatrician",
+            "patients": "1.8k+",
+            "rating": 4.9,
+            "img": "https://i.pravatar.cc/150?img=9"
+        },
+        {
+            "id": "dr-david",
+            "name": "Dr. Karthik Raja",
+            "specialty": "Dermatologist",
+            "patients": "1.1k+",
+            "rating": 4.7,
+            "img": "https://i.pravatar.cc/150?img=12"
+        }
+    ],
+    "messages": [
+        {
+            "id": 1,
+            "sender": "Dr. Anitha Raj",
+            "text": "Are the test results ready?",
+            "time": "10:30 AM",
+            "unread": 2,
+            "img": "https://i.pravatar.cc/150?img=5"
+        },
+        {
+            "id": 2,
+            "sender": "Dr. Senthil Kumar",
+            "text": "Meeting rescheduled to 2 PM.",
+            "time": "09:15 AM",
+            "unread": 0,
+            "img": "https://i.pravatar.cc/150?img=11"
+        },
+        {
+            "id": 3,
+            "sender": "Nurse Lakshmi",
+            "text": "Patient in room 302 needs assistance.",
+            "time": "Yesterday",
+            "unread": 0,
+            "img": "https://i.pravatar.cc/150?img=9"
+        }
+    ]
+}

@@ -1,0 +1,320 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* Bootstrap Import Removed (in main.jsx) */
+
+:root {
+  /* Metrics */
+  --sidebar-width: 260px;
+  --header-height: 70px;
+
+  /* Light Theme Colors */
+  --bg-body: #f1f5f9;
+  --bg-panel: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --primary: #4f46e5;
+  /* Indigo */
+  --secondary: #0ea5e9;
+  /* Sky */
+  --accent: #8b5cf6;
+  /* Violet */
+  --border-color: #e2e8f0;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+
+  /* Bootstrap Override */
+  --bs-border-color: var(--border-color);
+}
+
+[data-theme="dark"] {
+  /* Dark Theme Colors */
+  --bg-body: #0f172a;
+  --bg-panel: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  /* Lighter gray for better contrast */
+  --primary: #818cf8;
+  --secondary: #38bdf8;
+  --accent: #a78bfa;
+  --border-color: #334155;
+
+  /* Glass */
+  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  /* Bootstrap Override */
+  --bs-border-color: var(--border-color);
+  --bs-body-bg: var(--bg-body);
+  --bs-body-color: var(--text-main);
+}
+
+/* Global Border Override */
+.border,
+.border-top,
+.border-bottom,
+.border-start,
+.border-end {
+  border-color: var(--border-color) !important;
+}
+
+.hover-bg-subtle:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="dark"] .hover-bg-subtle:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+input,
+select,
+textarea,
+.form-control,
+.form-select {
+  background-color: transparent !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Fix option visibility in dark mode */
+option {
+  background-color: var(--bg-panel);
+  color: var(--text-main);
+}
+
+input::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.7;
+}
+
+/* Fix button borders */
+.btn-outline-secondary {
+  border-color: var(--border-color) !important;
+  color: var(--text-muted) !important;
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--bg-panel) !important;
+  color: var(--text-main) !important;
+}
+
+.btn-light {
+  background-color: var(--bg-panel) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-muted) !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Remove default focus outlines */
+*:focus {
+  outline: none !important;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+  opacity: 0.5;
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--bg-panel);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Text Colors */
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.text-primary-custom {
+  color: var(--primary);
+}
+
+.text-secondary-custom {
+  color: var(--secondary);
+}
+
+.bg-primary-custom {
+  background-color: var(--primary);
+}
+
+.btn-primary-custom {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+}
+
+.card-hoverable {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hoverable:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Hover Dropdowns */
+.dropdown-hover-container {
+  position: relative;
+}
+
+.dropdown-menu-custom {
+  display: none;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  min-width: 280px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  padding: 1rem;
+  z-index: 1000;
+  animation: slideDown 0.2s ease-out forwards;
+  backdrop-filter: blur(12px);
+}
+
+.dropdown-hover-container:hover .dropdown-menu-custom {
+  display: block;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Table overrides */
+table {
+  color: var(--text-main) !important;
+}
+
+.table> :not(caption)>*>* {
+  background-color: transparent !important;
+  color: var(--text-main) !important;
+  border-bottom-color: var(--border-color) !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.transition-all {
+  transition: all 0.2s ease;
+}
+
+/* Custom Styled Dropdowns (New) */
+.custom-select-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--border-color) !important;
+  /* was 0 before in some places, but border-color is useful */
+  background-color: transparent;
+  color: var(--text-main);
+  font-weight: 500;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.custom-select-trigger:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="dark"] .custom-select-trigger:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.custom-dropdown-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.custom-dropdown-btn {
+  width: 100%;
+  text-align: left;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: transparent;
+  color: var(--text-main);
+  transition: all 0.2s;
+  font-size: 0.875rem;
+}
+
+.custom-dropdown-btn:hover {
+  background-color: rgba(79, 70, 229, 0.1);
+  /* light primary tint */
+}
+
+.custom-dropdown-btn.active {
+  background-color: var(--primary);
+  color: white;
+}
